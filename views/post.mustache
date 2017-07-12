@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Make a new post</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav">
+        <a href="/">Gabble</a>
+        <a href="/post">Create a new post</a>
+        <a href="">Logged in as {{#gabble}}{{#user}}{{username}}{{/user}}{{/gabble}}</a>
+        <a href="/logout">Log out</a>
+        <a href="/signup">Sign up</a>
+      </div>
+    </nav>
+    <form action="/post" method="post">
+      <fieldset>
+        <label for="post">Create a new post:</label>
+        <textarea name="post"></textarea>
+        <div class="submit-button">
+          <input type="submit">
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gabble</title>
+  </head>
+  <body>
+  <nav>
+
+    <div class="nav">
+      <a href="/">Gabble</a>
+      <a href="/post">Create a new post</a>
+      <a href="">Logged in as {{#gabble}}{{#user}}{{activeUser}}{{/user}}{{/gabble}}</a>
+      <a href="/logout">Log out</a>
+      <a href="/signup">Sign up</a>
+    </div>
+
+  </nav>
+  <main>
+    {{#gabble}}
+    <div class="posts-container">
+      {{#post}}
+      {{author}} posted:
+      <br>
+      {{post}}
+      <br>
+      posted at: {{dateTime}}
+      <br>
+      liked by: {{likes}}
+      <br>
+      show _id: {{_id}}
+      <div class="button-container">
+       <form method="post" action="/likes"><button name="like" value="{{_id}}" type="submit"> Like </button>
+       </form>
+       <form method="post" action="/delete"><button name="delete" value="{{_id}}" type="submit"> Delete </button>
+       </form>
+       </div>
+      {{/post}}
+    </div>
+    {{/gabble}}
+  </main>
+  </body>
+</html>
